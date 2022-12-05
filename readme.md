@@ -1,3 +1,3 @@
-Coding Test Dwidasa Samsara Indonesias
+Coding Test Dwidasa Samsara Indonesia
 
 Jawaban No 1 & 2 ada di model/utilsFunction.php
