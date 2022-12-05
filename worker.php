@@ -1,5 +1,11 @@
 <?php 
 include 'view/header.php';
+if (!isset($_SESSION['fullname'])) {
+    echo "<SCRIPT> 
+    alert('You dont have access to this menu please login first!')
+    window.location.replace('http://localhost/test/view/auth/login.php');
+    </SCRIPT>";
+}
 include 'view/navbar.php';
 include 'model/connection.php';
 include 'model/workermodel.php';
@@ -13,7 +19,7 @@ $worker = new WorkerView();
         <h5 class="mt-2"> <i class="fas fa-users"></i> Worker Page</h5>
     </div>
     <div class="col-md-2">
-        <a href="http://localhost/test/view/worker/addworker.php" class="btn btn-warning float-end"><i class="fas fa-plus"></i> Add Worker</a>
+        <a href="http://localhost/test/view/worker/addworker.php" class="btn btn-warning float-end"><i class="fas fa-user-plus"></i> Add Worker</a>
     </div>
 </div>
 <div class="col-md-12 mt-3">

@@ -1,5 +1,11 @@
 <?php 
 include 'view/header.php';
+if (!isset($_SESSION['fullname'])) {
+    echo "<SCRIPT> 
+    alert('You dont have access to this menu please login first!')
+    window.location.replace('http://localhost/test/view/auth/login.php');
+    </SCRIPT>";
+}
 include 'view/navbar.php';
 include 'model/connection.php';
 include 'model/clientmodel.php';
@@ -10,7 +16,7 @@ $client = new ClientView();
 ?>
 <div class="row">
     <div class="col-md-8">
-        <h5 class="mt-2"> <i class="fas fa-users"></i> Client Page</h5>
+        <h5 class="mt-2"> <i class="fas fa-user-tie"></i> Client Page</h5>
     </div>
     <div class="col-md-4">
         <a href="http://localhost/test/view/client/addloans.php" class="btn btn-warning float-end"><i class="fas fa-hand-holding-usd"></i> Add Loans</a>

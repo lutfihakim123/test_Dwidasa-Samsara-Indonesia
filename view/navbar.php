@@ -13,14 +13,31 @@
           <a class="nav-link" href="http://localhost/test/client.php"><i class="fas fa-user-tie"></i> Client</a>
         </li>
       </ul>
+      <?php 
+      if (isset($_SESSION['fullname'])) {
+      ?>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#"> <i class="fas fa-user-plus"></i> Register</a>
+          <a class="nav-link" href="#"> <i class="fas fa-user"></i> <?= $_SESSION['fullname']; ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+          <a class="nav-link" href="http://localhost/test/view/auth/authproces.php?aksi=logout"><i class="fas fa-sign-in-alt"></i> Logout</a>
         </li>
       </ul>
+      <?php 
+      } else {
+      ?>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/test/view/auth/register.php"> <i class="fas fa-user-plus"></i> Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/test/view/auth/login.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+      </ul>
+      <?php 
+      }
+      ?>
     </div>
   </div>
 </nav>
